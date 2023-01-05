@@ -21,6 +21,7 @@ data = {"csrf_token" : token, "username" : "name", "password" : "password"} #Mak
 while len(result_text) != 0:
     result = work.get("https://quotes.toscrape.com/page/" +str(page), headers=headers, data=data,
                       allow_redirects=True)  # Take our data and go to login user site's title
+    sleep(3)
 
     result_text = BeautifulSoup(result.text, "html.parser").find_all("span", class_="text")
 
